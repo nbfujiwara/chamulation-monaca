@@ -4,8 +4,13 @@ module.exports = {
     browser: true,
     node: true
   },
+  plugins: [
+    '@typescript-eslint',
+    'prettier'
+  ],
   parserOptions: {
-    parser: 'babel-eslint'
+//    parser: 'babel-eslint'
+    parser: '@typescript-eslint/parser'
   },
   extends: [
     '@nuxtjs',
@@ -14,10 +19,11 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:nuxt/recommended'
   ],
-  plugins: [
-    'prettier'
-  ],
   // add your custom rules here
   rules: {
+    //'@typescript-eslint/no-unused-vars': 'error',
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": 0,
+    "no-console": 'off'
   }
 }
