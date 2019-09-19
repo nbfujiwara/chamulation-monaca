@@ -7,6 +7,7 @@ export interface IBasicState {
   sex: number
   marriage: boolean
   income: number
+  valuesForWait: string
 }
 
 export interface IAppendixState {

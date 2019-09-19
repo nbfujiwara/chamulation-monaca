@@ -9,6 +9,7 @@ import { Component, Prop, Watch, Vue } from 'vue-property-decorator'
 import * as c3 from 'c3'
 import CalculateDao from '../libs/dao/CalculateDao'
 import { appendixStateModule } from '~/store/modules/appendix'
+import { basicStateModule } from '~/store/modules/basic'
 
 @Component
 export default class BarChart extends Vue {
@@ -17,8 +18,15 @@ export default class BarChart extends Vue {
   get appendixValuesForWait() {
     return appendixStateModule.valuesForWait
   }
+  get basicValuesForWait() {
+    return basicStateModule.valuesForWait
+  }
   @Watch('appendixValuesForWait')
   onAppendixChanged(newVal: any, oldVal: any) {
+    this.drawGraphData()
+  }
+  @Watch('basicValuesForWait')
+  onBasicChanged(newVal: any, oldVal: any) {
     this.drawGraphData()
   }
   drawGraphData(): void {
@@ -71,4 +79,3 @@ export default class BarChart extends Vue {
   }
 }
 </script>
-

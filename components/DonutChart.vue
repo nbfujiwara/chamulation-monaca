@@ -10,6 +10,7 @@ import * as c3 from 'c3'
 import * as d3 from 'd3'
 import CalculateDao from '../libs/dao/CalculateDao'
 import { appendixStateModule } from '~/store/modules/appendix'
+import { basicStateModule } from '~/store/modules/basic'
 
 @Component
 export default class DonutChart extends Vue {
@@ -18,8 +19,15 @@ export default class DonutChart extends Vue {
   get appendixValuesForWait() {
     return appendixStateModule.valuesForWait
   }
+  get basicValuesForWait() {
+    return basicStateModule.valuesForWait
+  }
   @Watch('appendixValuesForWait')
   onAppendixChanged(newVal: any, oldVal: any) {
+    this.drawGraphData()
+  }
+  @Watch('basicValuesForWait')
+  onBasicChanged(newVal: any, oldVal: any) {
     this.drawGraphData()
   }
   drawGraphData(): void {

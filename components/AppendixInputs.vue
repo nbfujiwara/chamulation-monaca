@@ -1,13 +1,14 @@
 <template>
   <div class="container d-block">
     <div class="fromGroup mb-5">
-      <p class="label">浪費度合い（相場平均からのズレ）</p>
+      <p class="caption">浪費度合い（相場平均からのズレ）</p>
       <v-slider
         v-model="outRate"
+        prepend-icon="mdi-cash-usd-outline"
         thumb-label
         min="-50"
         max="100"
-        class="ml-5 mr-5"
+        class="mr-5"
         @change="onChangeOutRate"
       >
         <template v-slot:append>
@@ -25,13 +26,14 @@
       </v-slider>
     </div>
     <div class="fromGroup mb-5">
-      <p class="label">退職する年齢</p>
+      <p class="caption">退職する年齢</p>
       <v-slider
         v-model="retireAge"
+        prepend-icon="mdi-office-building"
         thumb-label
         min="50"
-        max="100"
-        class="ml-5 mr-5"
+        max="80"
+        class="mr-5"
         @change="onChangeRetireAge"
       >
         <template v-slot:append>
@@ -49,14 +51,15 @@
       </v-slider>
     </div>
     <div class="fromGroup mb-5">
-      <p class="label">追加資産</p>
+      <p class="caption">追加資産</p>
       <v-slider
         v-model="fortune"
+        prepend-icon="mdi-braille"
         thumb-label
         min="0"
         max="10000"
         step="10"
-        class="ml-5 mr-5"
+        class="mr-5"
         @change="onChangeFortune"
       >
         <template v-slot:append>
@@ -74,13 +77,16 @@
       </v-slider>
     </div>
     <div class="fromGroup mb-5">
-      <p class="label">死んじゃう年齢</p>
+      <p class="caption">
+        死んじゃう年齢
+      </p>
       <v-slider
         v-model="dieAge"
+        prepend-icon="mdi-emoticon-cry"
         thumb-label
         min="60"
         max="100"
-        class="ml-5 mr-5"
+        class="mr-5"
         @change="onChangeDieAge"
       >
         <template v-slot:append>
@@ -137,7 +143,6 @@ export default class AppendixInputs extends Vue {
 
   .label {
     text-align: left;
-    font-weight: bold;
   }
 }
 </style>

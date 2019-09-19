@@ -1,5 +1,5 @@
 <template>
-  <div class="chatBalloon">
+  <div class="chatBalloon slideInRight">
     <div class="chatBody">
       {{ serif }}
     </div>
@@ -41,5 +41,21 @@ export default class InputBalloon extends Vue {
     -webkit-transform: rotate(-35deg);
     transform: rotate(-35deg);
   }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.slideInRight {
+  animation-name: slideInRight;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
 }
 </style>

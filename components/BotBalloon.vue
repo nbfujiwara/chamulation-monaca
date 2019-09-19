@@ -1,5 +1,5 @@
 <template>
-  <div class="chatBalloon chatPartner">
+  <div class="chatBalloon chatPartner slideInLeft">
     <div class="chatFace">
       <v-icon class="chatImage" x-large>mdi-account-circle</v-icon>
     </div>
@@ -62,5 +62,21 @@ export default class BotBalloon extends Vue {
     -webkit-transform: rotate(35deg);
     transform: rotate(35deg);
   }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.slideInLeft {
+  animation-name: slideInLeft;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
 }
 </style>
