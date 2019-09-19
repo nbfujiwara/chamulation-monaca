@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="chartContainer pa-3">
     <div id="chart"></div>
   </div>
 </template>
@@ -64,11 +64,11 @@ export default class BarChart extends Vue {
         order: null
       },
       axis: {
-        rotated: true
+        rotated: true,
+        x: { show: false }
       }
     })
   }
 }
 </script>
 
-<style scoped lang="scss"></style>
