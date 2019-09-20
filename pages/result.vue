@@ -5,20 +5,22 @@
       <donut-chart v-if="isDonutChart"></donut-chart>
     </div>
     <div>
-      <v-tabs v-model="selectedTab">
-        <v-tab key="0"
+      <v-tabs v-model="selectedTab" fixed-tabs>
+        <v-tab key="0" class="customTab"
           ><v-icon>mdi-calculator</v-icon
           ><span class="overline">シミュレーション</span></v-tab
         >
-        <v-tab key="1"
+        <v-tab key="1" class="customTab"
           ><v-icon>mdi-format-list-bulleted</v-icon
           ><span class="overline">詳細情報</span></v-tab
         >
-        <v-tab key="2"
+        <v-tab key="2" class="customTab"
           ><v-icon>mdi-human-male-male</v-icon
           ><span class="overline">基本情報</span></v-tab
         >
-        <v-tab key="3"><v-icon>mdi-settings-outline</v-icon></v-tab>
+        <v-tab key="3" class="customTab"
+          ><v-icon>mdi-settings-outline</v-icon></v-tab
+        >
       </v-tabs>
       <v-tabs-items v-model="selectedTab">
         <v-tab-item key="0"><appendix-inputs></appendix-inputs></v-tab-item>
@@ -57,5 +59,8 @@ export default class ResultPage extends Vue {
   width: 100%;
   margin: 0;
   font-size: 14px;
+}
+.customTab {
+  max-width: 300px;
 }
 </style>
