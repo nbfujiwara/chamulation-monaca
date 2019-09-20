@@ -8,12 +8,12 @@
         "dev": "nuxt-ts",
         "build": "nuxt-ts build",
         "start": "nuxt-ts start",
-        "generate": "nuxt-ts generate",
+        "generate": "nuxt-ts generate && rm -rf www/_nuxt && cp -r -f dist/ www/",
         "lint": "eslint --ext .ts,.vue --ignore-path .gitignore .",
         "test": "jest",
         "monaca:preview": "yarn dev",
-        "monaca:transpile": "yarn build",
-        "monaca:debug": "npm run watch"
+        "monaca:transpile": "yarn generate",
+        "monaca:debug": "yarn dev"
     },
     "dependencies": {
         "@nuxt/typescript-runtime": "^0.1.6",
@@ -33,7 +33,7 @@
         "@vue/test-utils": "^1.0.0-beta.27",
         "babel-eslint": "^10.0.1",
         "babel-jest": "^24.1.0",
-        "cordova": "^7.1.0",
+        "cordova": "^9.0.0",
         "eslint": "^6.1.0",
         "eslint-config-prettier": "^4.1.0",
         "eslint-plugin-nuxt": ">=0.4.2",

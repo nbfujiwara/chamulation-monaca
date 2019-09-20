@@ -15,7 +15,19 @@ const nuxtConfig: Configuration = {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'stylesheet', href: 'components/loader.css' }],
+    script: [{ src: 'components/loader.js' }]
+  },
+  build: {
+    extend(config, ctx) {
+      // 各ファイルが相対リンクされるよう変更する
+      // @ts-ignore
+      config.output.publicPath = '_nuxt/'
+    }
+  },
+  router: {
+    // ルーティングをハッシュモードにする
+    mode: 'hash'
   },
   loading: { color: '#fff' },
   css: [],
