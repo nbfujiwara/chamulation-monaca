@@ -30,7 +30,7 @@ import { basicStateModule } from '~/store/modules/basic'
     SelfBalloon: () => import('../components/SelfBalloon.vue')
   }
 })
-export default class IndexPage extends Vue {
+export default class FormPage extends Vue {
   chatData: IChatBalloon[] = []
   chatContext: ChatContextLogic
 

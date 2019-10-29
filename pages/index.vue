@@ -9,7 +9,6 @@
           Start
         </v-btn>
 
-
         <hr class="mt-10 mb-5" />
         <v-btn color="default" block class="ma-1" to="/result" nuxt>
           とりあえずchart
@@ -29,7 +28,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 
 @Component
-export default class WorkTypeSelect extends Vue {
+export default class IndexPage extends Vue {
   gotoPage(url) {
     this.$router.push({ path: url })
   }
